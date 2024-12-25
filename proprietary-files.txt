@@ -1,4 +1,4 @@
-# All unpinned blobs are from RMX2185_11_C.10
+# All unpinned blobs are from RMX3191_11_A.27
 
 # APNs
 etc/apns-conf.xml:product/etc/apns-conf.xml
