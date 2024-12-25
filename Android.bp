@@ -1,0 +1,9 @@
+soong_namespace {
+    imports: [
+        "vendor/realme/even",
+    ],
+}
+
+subdirs = [
+    "usb",
+]

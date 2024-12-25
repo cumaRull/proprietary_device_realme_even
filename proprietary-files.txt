@@ -1,0 +1,66 @@
+# All unpinned blobs are from RMX2185_11_C.10
+
+# APNs
+etc/apns-conf.xml:product/etc/apns-conf.xml
+
+# Bluetooth (AptX)
+lib64/libaptX_encoder.so
+lib64/libaptXHD_encoder.so
+
+# EngineerMode
+-priv-app/EngineerMode/EngineerMode.apk
+lib/libem_support_jni.so
+lib64/libem_support_jni.so
+
+# IMS
+-framework/mediatek-common.jar
+-framework/mediatek-framework.jar
+-framework/mediatek-ims-base.jar
+-framework/mediatek-ims-common.jar
+-framework/mediatek-telecom-common.jar
+-framework/mediatek-telephony-base.jar
+-framework/mediatek-telephony-common.jar
+-priv-app/ImsService/ImsService.apk|fd48e90f3e4dbd91367159fa1025945d5ca8f6fe
+bin/vtservice
+etc/init/init.vtservice.rc
+etc/permissions/privapp-permissions-mediatek.xml
+framework/mediatek-ims-extension-plugin.jar
+framework/mediatek-ims-legacy.jar
+lib/libcomutils.so
+lib/libimsma.so
+lib/libimsma_adapt.so
+lib/libimsma_rtp.so
+lib/libimsma_socketwrapper.so
+lib/libmtk_vt_service.so
+lib/libmtk_vt_wrapper.so
+lib/libmtkavenhancements.so
+lib/libsignal.so
+lib/libsink.so
+lib/libsource.so
+lib/libvcodec_cap.so
+lib/libvcodec_capenc.so
+lib/libvt_avsync.so
+lib64/libmtk_vt_wrapper.so
+lib64/libmtkavenhancements.so
+lib64/libmtkperf_client.so
+lib64/libvcodec_cap.so
+lib64/libvcodec_capenc.so
+system_ext/lib/vendor.mediatek.hardware.videotelephony@1.0.so
+system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
+
+# Kernel Power Off Charging (KPOC)
+bin/kpoc_charger
+etc/init/kpoc_charger.rc
+lib/libshowlogo.so
+
+# Mtk FM Radio
+-product/lib/libfmjni.so
+-product/lib64/libfmjni.so
+
+# Camera - from RMX2185_11_C.08
+vendor/lib/libdpframework.so:product/vendor_overlay/30/lib/libdpframework.so|1cc4f7d8a4d0cab9234954c72ccf581ba813cc86
+vendor/lib64/libdpframework.so:product/vendor_overlay/30/lib64/libdpframework.so|d04ac301283baefa8879b54d1969ba54441143ad
+
+# Power
+-vendor/lib64/libpowerhal.so:product/vendor_overlay/30/lib64/libpowerhal.so
+-vendor/lib/libpowerhal.so:product/vendor_overlay/30/lib/libpowerhal.so
