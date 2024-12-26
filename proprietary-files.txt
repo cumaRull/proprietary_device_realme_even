@@ -53,10 +53,6 @@ bin/kpoc_charger
 etc/init/kpoc_charger.rc
 lib/libshowlogo.so
 
-# Mtk FM Radio
--product/lib/libfmjni.so
--product/lib64/libfmjni.so
-
 # Camera - from RMX2185_11_C.08
 vendor/lib/libdpframework.so:product/vendor_overlay/30/lib/libdpframework.so|1cc4f7d8a4d0cab9234954c72ccf581ba813cc86
 vendor/lib64/libdpframework.so:product/vendor_overlay/30/lib64/libdpframework.so|d04ac301283baefa8879b54d1969ba54441143ad
