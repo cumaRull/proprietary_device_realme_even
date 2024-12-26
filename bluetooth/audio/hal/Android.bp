@@ -6,8 +6,6 @@ cc_binary {
     srcs: [
         "BluetoothAudioProvider.cpp",
         "BluetoothAudioProviderFactory.cpp",
-        "A2dpOffloadAudioProvider.cpp",
-        "A2dpSoftwareAudioProvider.cpp",
         "HearingAidAudioProvider.cpp",
         "LeAudioOffloadAudioProvider.cpp",
         "LeAudioSoftwareAudioProvider.cpp",
