@@ -21,8 +21,6 @@
 #include <BluetoothAudioCodecs.h>
 #include <android-base/logging.h>
 
-#include "A2dpOffloadAudioProvider.h"
-#include "A2dpSoftwareAudioProvider.h"
 #include "BluetoothAudioProvider.h"
 #include "HearingAidAudioProvider.h"
 #include "LeAudioOffloadAudioProvider.h"
@@ -43,12 +41,6 @@ ndk::ScopedAStatus BluetoothAudioProviderFactory::openProvider(
   std::shared_ptr<BluetoothAudioProvider> provider = nullptr;
 
   switch (session_type) {
-    case SessionType::A2DP_SOFTWARE_ENCODING_DATAPATH:
-      provider = ndk::SharedRefBase::make<A2dpSoftwareEncodingAudioProvider>();
-      break;
-    case SessionType::A2DP_HARDWARE_OFFLOAD_ENCODING_DATAPATH:
-      provider = ndk::SharedRefBase::make<A2dpOffloadEncodingAudioProvider>();
-      break;
     case SessionType::HEARING_AID_SOFTWARE_ENCODING_DATAPATH:
       provider = ndk::SharedRefBase::make<HearingAidAudioProvider>();
       break;
@@ -72,12 +64,6 @@ ndk::ScopedAStatus BluetoothAudioProviderFactory::openProvider(
       provider =
           ndk::SharedRefBase::make<LeAudioOffloadBroadcastAudioProvider>();
       break;
-    case SessionType::A2DP_SOFTWARE_DECODING_DATAPATH:
-      provider = ndk::SharedRefBase::make<A2dpSoftwareDecodingAudioProvider>();
-      break;
-    case SessionType::A2DP_HARDWARE_OFFLOAD_DECODING_DATAPATH:
-      provider = ndk::SharedRefBase::make<A2dpOffloadDecodingAudioProvider>();
-      break;
     default:
       provider = nullptr;
       break;
@@ -96,16 +82,7 @@ ndk::ScopedAStatus BluetoothAudioProviderFactory::openProvider(
 ndk::ScopedAStatus BluetoothAudioProviderFactory::getProviderCapabilities(
     const SessionType session_type,
     std::vector<AudioCapabilities>* _aidl_return) {
-  if (session_type == SessionType::A2DP_HARDWARE_OFFLOAD_ENCODING_DATAPATH ||
-      session_type == SessionType::A2DP_HARDWARE_OFFLOAD_DECODING_DATAPATH) {
-    auto codec_capabilities =
-        BluetoothAudioCodecs::GetA2dpOffloadCodecCapabilities(session_type);
-    _aidl_return->resize(codec_capabilities.size());
-    for (int i = 0; i < codec_capabilities.size(); i++) {
-      _aidl_return->at(i).set<AudioCapabilities::a2dpCapabilities>(
-          codec_capabilities[i]);
-    }
-  } else if (session_type ==
+  if (session_type ==
                  SessionType::LE_AUDIO_HARDWARE_OFFLOAD_ENCODING_DATAPATH ||
              session_type ==
                  SessionType::LE_AUDIO_HARDWARE_OFFLOAD_DECODING_DATAPATH ||
