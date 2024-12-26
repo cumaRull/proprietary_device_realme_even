@@ -185,6 +185,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ImsInit
 
+
+# MediaTek FMRadio
+PRODUCT_PACKAGES += \
+    FMRadio
+
 # Bluetooth Audio (System-side HAL, sysbta)
 PRODUCT_PACKAGES += \
     audio.sysbta.default \
